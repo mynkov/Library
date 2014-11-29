@@ -1,0 +1,53 @@
+﻿@using Kendo.Mvc.UI
+
+@{
+    ViewBag.Title = Library.Web.Properties.Resources.Views.PeopleIndex;
+}
+
+<script src="@Url.Content("~/Scripts/Library/People/Edit.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/Library/People/Index.js")" type="text/javascript"></script>
+
+<h2>
+    @Library.Web.Properties.Resources.Views.PeopleIndex</h2>
+<p>
+    <input type="button" class="btn btn-default" id="create-person" data-url="@Url.Action(MVC.Main.People.ActionNames.Create)" value="@Library.Web.Properties.Resources.Views.Create"/>
+</p>
+@(Html.Kendo().Grid<Library.BusinessLayer.Entities.Person>()
+            .Name("people-grid")
+        .Columns(columns =>
+        {
+            columns.Bound(c => c.Name);
+            columns.Bound(c => c.Age).Width(150);
+            columns.Bound(c => c.RegistrationDate).Width(150).Format("{0:d}");
+            columns.Bound(a => a.Id).Width(120).Title(@Library.Web.Properties.Resources.Views.Actions).Filterable(false).ClientTemplate(
+                "<a class='command edit-command glyphicon glyphicon-edit' data-url=" + @Url.Action(MVC.Main.People.ActionNames.Edit) + " title='" + @Library.Web.Properties.Resources.Views.Edit + "'/>" +
+                "<a class='command operations-command glyphicon glyphicon-list' data-url=" + @Url.Action(MVC.Main.People.ActionNames.Operations) + " title='" + @Library.Web.Properties.Resources.Views.Operations + "'/>" +
+                "<a class='command delete-command glyphicon glyphicon-remove' data-url=" + @Url.Action(MVC.Main.People.ActionNames.Delete) + " data-confirm-message='" + @Library.Web.Properties.Resources.Messages.ConfirmDeletion + "' title='" + @Library.Web.Properties.Resources.Views.Delete + "'/>");
+        })
+        .Scrollable()
+        .Sortable()
+        .Pageable(pageable => pageable
+            .PageSizes(true)
+            .ButtonCount(5))
+        .DataSource(dataSource => dataSource
+            .Ajax()
+                        .Read(read => read.Action(MVC.Main.People.ActionNames.GetList, MVC.Main.People.Name))
+        )
+      )
+@(Html.Kendo().Window()
+    .Name("person-window")
+    .Title(Library.Web.Properties.Resources.Views.PersonCard)
+    .Draggable()
+    .Width(600)
+    .Visible(false)
+    .Modal(true)
+    .Actions(actions => actions.Close()))
+      
+@(Html.Kendo().Window()
+    .Name("person-operations-window")
+    .Title(Library.Web.Properties.Resources.Views.Operations)
+    .Draggable()
+    .Width(600)
+    .Visible(false)
+    .Modal(true)
+    .Actions(actions => actions.Close()))

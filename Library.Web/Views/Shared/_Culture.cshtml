@@ -1,0 +1,18 @@
+﻿<script type="text/javascript">
+    $(function () {
+        $('#culture-panel [data-value=' + '@System.Globalization.CultureInfo.CurrentUICulture.Name' + ']').addClass('culture-current');
+
+        $('#culture-panel').click(function () {
+            $(this).find('span').toggleClass('culture-current');
+            var culture = $(this).find('.culture-current').attr('data-value');
+
+            $.post('@Url.Action(MVC.Culture.ActionNames.ChangeCulture, MVC.Culture.Name, new { Area = string.Empty })', { culture: culture }, function () {
+                location.reload();
+            });
+        });
+    });
+</script>
+<div id="culture-panel" title="@Library.Web.Properties.Resources.Views.ChangeCulture">
+    <span id="culture-ru" data-value="ru-RU">Ru</span> <span id="culture-en" data-value="en-US">
+        En</span>
+</div>

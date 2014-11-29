@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap enableLocalization="true">
+  <siteMapNode>
+    <siteMapNode title="Main" resourceKey="Library">
+    <siteMapNode title="People" area="Main" controller="People" action="Index" resourceKey="People"/>
+    <siteMapNode title="Books" area="Main" controller="Books" action="Index" resourceKey="Books"/>
+  </siteMapNode>
+    <siteMapNode title="Administration" resourceKey="Administration">
+      <siteMapNode title="Logs" area="Administration" controller="Logs" action="Index" resourceKey="Logs"/>
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

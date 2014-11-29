@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ECA9EB42-0F90-40B2-B066-DA1164B8D1E1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Library.DataAccessLayer</RootNamespace>
+    <AssemblyName>Library.DataAccessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <DontImportPostSharp>True</DontImportPostSharp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="PostSharp">
+      <HintPath>..\packages\PostSharp.3.1.42\lib\net20\PostSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ForeignKeyNamingConvention.cs" />
+    <Compile Include="DatabaseContext.cs" />
+    <Compile Include="Migrations\00\V1.cs" />
+    <Compile Include="Migrations\00\V1.Designer.cs">
+      <DependentUpon>V1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\00\V2.cs" />
+    <Compile Include="Migrations\00\V2.Designer.cs">
+      <DependentUpon>V2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\00\V3.cs" />
+    <Compile Include="Migrations\00\V3.Designer.cs">
+      <DependentUpon>V3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\00\V4.cs" />
+    <Compile Include="Migrations\00\V4.Designer.cs">
+      <DependentUpon>V4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\00\V5.cs" />
+    <Compile Include="Migrations\00\V5.Designer.cs">
+      <DependentUpon>V5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\00\V6.cs" />
+    <Compile Include="Migrations\00\V6.Designer.cs">
+      <DependentUpon>V6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\00\V7.cs" />
+    <Compile Include="Migrations\00\V7.Designer.cs">
+      <DependentUpon>V7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\00\V8.cs" />
+    <Compile Include="Migrations\00\V8.Designer.cs">
+      <DependentUpon>V8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\00\V9.cs" />
+    <Compile Include="Migrations\00\V9.Designer.cs">
+      <DependentUpon>V9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\10\V10.cs" />
+    <Compile Include="Migrations\10\V10.Designer.cs">
+      <DependentUpon>V10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\10\V11.cs" />
+    <Compile Include="Migrations\10\V11.Designer.cs">
+      <DependentUpon>V11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\10\V12.cs" />
+    <Compile Include="Migrations\10\V12.Designer.cs">
+      <DependentUpon>V12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\10\V13.cs" />
+    <Compile Include="Migrations\10\V13.Designer.cs">
+      <DependentUpon>V13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="ModelBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Operations\BooksOperationsRepository.cs" />
+    <Compile Include="Repositories\Operations\UsersOperationsRepository.cs" />
+    <Compile Include="Repositories\UsersRepository.cs" />
+    <Compile Include="Repositories\EntitiesRepository.cs" />
+    <Compile Include="Repositories\BooksRepository.cs" />
+    <Compile Include="Repositories\Operations\OperationsRepository.cs" />
+    <Compile Include="Repositories\Operations\PeopleOperationsRepository.cs" />
+    <Compile Include="Repositories\PeopleRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Library.BusinessLayer\Library.BusinessLayer.csproj">
+      <Project>{7E743C73-EDAA-4BD4-8227-5A099B5F2707}</Project>
+      <Name>Library.BusinessLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\00\V1.resx">
+      <DependentUpon>V1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\00\V2.resx">
+      <DependentUpon>V2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\00\V3.resx">
+      <DependentUpon>V3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\00\V4.resx">
+      <DependentUpon>V4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\00\V5.resx">
+      <DependentUpon>V5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\00\V6.resx">
+      <DependentUpon>V6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\00\V7.resx">
+      <DependentUpon>V7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\00\V8.resx">
+      <DependentUpon>V8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\00\V9.resx">
+      <DependentUpon>V9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\10\V10.resx">
+      <DependentUpon>V10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\10\V11.resx">
+      <DependentUpon>V11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\10\V12.resx">
+      <DependentUpon>V12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\10\V13.resx">
+      <DependentUpon>V13.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\PostSharp.3.1.42\tools\PostSharp.targets" Condition="Exists('..\packages\PostSharp.3.1.42\tools\PostSharp.targets')" />
+  <Target Name="EnsurePostSharpImported" BeforeTargets="BeforeBuild" Condition="'$(PostSharp30Imported)' == ''">
+    <Error Condition="!Exists('..\packages\PostSharp.3.1.42\tools\PostSharp.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://www.postsharp.net/links/nuget-restore." />
+    <Error Condition="Exists('..\packages\PostSharp.3.1.42\tools\PostSharp.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://www.postsharp.net/links/nuget-restore." />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

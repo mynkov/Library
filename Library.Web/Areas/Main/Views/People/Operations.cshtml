@@ -1,0 +1,28 @@
+﻿@using Kendo.Mvc.UI
+@model int
+@using (Ajax.BeginForm(new AjaxOptions
+{
+    HttpMethod = "POST",
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "person-operations-window"
+}))
+{     
+    @(Html.Kendo().Grid<Library.BusinessLayer.Entities.Operations.PeopleOperation>()
+        .Name("person-operations-grid")
+        .Columns(columns =>
+        {
+            columns.Bound(c => c.OperationType);
+            columns.Bound(c => c.User.MembershipUser.UserName).Width(150);
+            columns.Bound(c => c.CreationDate).Width(150).Format("{0:G}");
+        })
+        .Scrollable()
+        .Sortable()
+        .Pageable(pageable => pageable
+            .PageSizes(true)
+            .ButtonCount(5))
+        .DataSource(dataSource => dataSource
+            .Ajax()
+                .Read(read => read.Action(MVC.Main.People.ActionNames.GetOperations, MVC.Main.People.Name, new { id = Model }))
+        )
+      )
+}

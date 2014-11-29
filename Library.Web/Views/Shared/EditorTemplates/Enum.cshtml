@@ -1,0 +1,7 @@
+﻿@using Kendo.Mvc.UI
+@using Library.Web.Extensions
+@model Enum
+       
+@(Html.Kendo().DropDownList()
+       .Name(ViewData.ModelMetadata.PropertyName)
+      .BindTo(Model.ToSelectList(ViewData.ModelMetadata.ModelType)))

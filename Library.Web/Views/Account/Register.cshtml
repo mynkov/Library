@@ -1,0 +1,29 @@
+﻿@using Library.Web.Extensions
+@model Library.Web.Models.Account.Register
+@{
+    ViewBag.Title = Library.Web.Properties.Resources.Views.Register;
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+<h2>@Library.Web.Properties.Resources.Views.Register</h2>
+<p>
+    Use the form below to create a new account.
+</p>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "Account creation was unsuccessful. Please correct the errors and try again.")
+    <div>
+        <fieldset>
+            <legend>Account Information</legend>
+            @Html.TemplateFor(model => model.UserName)
+            @Html.TemplateFor(model => model.Email)
+            @Html.TemplateFor(model => model.Password)
+            @Html.TemplateFor(model => model.ConfirmPassword)
+            <p>
+                <input type="submit" value="@Library.Web.Properties.Resources.Views.Register" class="btn btn-primary"/>
+            </p>
+        </fieldset>
+    </div>
+}

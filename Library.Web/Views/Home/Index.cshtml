@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<h2>@ViewBag.Message</h2>
+
+<p>   
+    CurrentCulture @System.Globalization.CultureInfo.CurrentCulture.Name
+    CurrentUICulture @System.Globalization.CultureInfo.CurrentUICulture.Name
+</p>
+<p>
+    @Html.ActionLink("Persons", "Index", "People")
+    <br />
+    @Html.ActionLink("Books", "Index", "Books")
+    <br />
+    @Html.ActionLink("AddBook", "AddBook", "People")
+</p>
